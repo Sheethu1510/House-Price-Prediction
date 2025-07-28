@@ -1,50 +1,53 @@
-California Housing Price Prediction using TensorFlow
+# California Housing Price Prediction using TensorFlow
 
+This project demonstrates how to build a basic regression model using TensorFlow and the California Housing dataset. The model predicts median house prices in different districts based on a variety of features such as income, population, and location.
 
+## Overview
 
-This project builds a basic regression model using TensorFlow and the California Housing dataset from Scikit-learn. The model is trained to predict median house values in California districts based on demographic and geographic features.
+* **Goal**: Predict the median house value in California districts.
+* **Type**: Supervised Regression Problem.
+* **Tool**: TensorFlow (Keras API).
 
-Dataset
-Source: sklearn.datasets.fetch_california_housing
+## Dataset
 
-Type: Tabular dataset with 8 numerical input features and 1 target output (median house value)
+* **Source**: Scikit-learn's California Housing dataset (`fetch_california_housing`)
+* **Features**:
 
-Features Used
-MedInc – Median income in block group
+  * Median Income
+  * House Age
+  * Average Rooms
+  * Average Bedrooms
+  * Population
+  * Average Occupancy
+  * Latitude
+  * Longitude
+* **Target**: Median house value (in \$100,000s)
 
-HouseAge – Median house age
+## Data Preprocessing
 
-AveRooms – Average number of rooms
+* Data is split into training and testing sets (80/20 ratio).
+* Features are scaled using `StandardScaler` for improved model convergence.
 
-AveBedrms – Average number of bedrooms
+## Model Architecture
 
-Population – Population per block group
+* Input Layer with 8 features
+* One Hidden Layer with 64 neurons and ReLU activation
+* Output Layer with a single neuron (for price prediction)
 
-AveOccup – Average household occupancy
+## Training Configuration
 
-Latitude – Latitude
+* **Loss Function**: Mean Squared Error (MSE)
+* **Optimizer**: Adam
+* **Metric**: Mean Absolute Error (MAE)
+* **Epochs**: 10
+* **Validation**: Uses the test set for validation during training
 
-Longitude – Longitude
+## Performance
 
-Model Architecture
-Input Layer: 8 input features
+After training for 10 epochs, the model achieves reasonable performance in predicting housing prices. Accuracy metrics may vary depending on initialization and split.
 
-Hidden Layer: Dense(64 units, ReLU activation)
+## How to Run
 
-Output Layer: Dense(1 unit, no activation) – regression output
-
-Preprocessing
-Feature normalization using StandardScaler
-
-Data split into training and testing sets (80% train, 20% test)
-
-Training Details
-Loss Function: Mean Squared Error (mse)
-
-Metric: Mean Absolute Error (mae)
-
-Optimizer: Adam
-
-Epochs: 10
-
-Validation: Performed on the test set
+1. Clone the repository.
+2. Install required packages: TensorFlow and Scikit-learn.
+3. Run the Python script to train and evaluate the model.
