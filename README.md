@@ -1,4 +1,7 @@
 California Housing Price Prediction using TensorFlow
+
+
+
 This project builds a basic regression model using TensorFlow and the California Housing dataset from Scikit-learn. The model is trained to predict median house values in California districts based on demographic and geographic features.
 
 Dataset
